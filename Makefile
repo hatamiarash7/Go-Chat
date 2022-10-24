@@ -1,7 +1,7 @@
 include .env
 
 build: ## Build project
-	go build
+	go build -ldflags="-s -w"
 
 server: ## Run the server
 	START_MODE=server ./go-chat --mode server
