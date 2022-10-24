@@ -17,3 +17,6 @@ go.work
 
 # Dependency directories
 vendor/
+
+# Environments
+.env
