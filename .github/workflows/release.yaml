@@ -39,7 +39,7 @@ jobs:
           GOARCH: ${{ matrix.arch }}
           CGO_ENABLED: 0
           LDFLAGS: -s -w -X github.com/hatamiarash7/go-chat/internal/pkg/version.version=${{ steps.slug.outputs.version }}
-        run: go build -trimpath -ldflags "$LDFLAGS" -o "./${{ steps.values.outputs.binary-name }}" ./cmd/webhook-tester/
+        run: go build -trimpath -ldflags "$LDFLAGS" -o "./${{ steps.values.outputs.binary-name }}" .
 
       - name: Upload binaries to release
         uses: svenstaro/upload-release-action@v2
