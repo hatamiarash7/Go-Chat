@@ -86,14 +86,14 @@ func StartServer() {
 		port = "12345"
 	}
 
-	hosts, ok := os.LookupEnv("HOSTS")
+	host, ok := os.LookupEnv("HOST")
 	if !ok {
-		hosts = "localhost"
+		host = "localhost"
 	}
 
 	log.Info("Starting server...")
-	log.Infof("Accepting connections on %s:%s", hosts, port)
-	listener, error := net.Listen("tcp", hosts+":"+port)
+	log.Infof("Accepting connections on %s:%s", host, port)
+	listener, error := net.Listen("tcp", host+":"+port)
 	if error != nil {
 		log.Error(error)
 	}
