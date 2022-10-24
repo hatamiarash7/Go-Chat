@@ -2,7 +2,7 @@ module github.com/hatamiarash7/go-chat
 
 go 1.19
 
-require github.com/joho/godotenv v1.3.0
+require github.com/joho/godotenv v1.4.0
 
 require (
 	github.com/ProtonMail/gopenpgp/v2 v2.4.10
