@@ -14,3 +14,6 @@ go-chat
 
 # Go workspace file
 go.work
+
+# Dependency directories
+vendor/
