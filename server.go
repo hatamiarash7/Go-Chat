@@ -1,10 +1,11 @@
 package main
 
 import (
-	"fmt"
 	"net"
 	"os"
 	"strings"
+
+	log "github.com/sirupsen/logrus"
 )
 
 // ClientManager model defines attributes of a manager object.
@@ -20,16 +21,15 @@ func (manager *ClientManager) start() {
 		select {
 		case connection := <-manager.register:
 			manager.clients[connection] = connection.id
-			fmt.Println("[NEW CONNECTION] Addr -", connection.id)
+			log.Println("[NEW CONNECTION] Address : %s", connection.id)
 		case connection := <-manager.unregister:
 			_, ok := manager.clients[connection]
 			if ok {
 				close(connection.data)
 				delete(manager.clients, connection)
-				fmt.Println("[CONNECTION CLOSED] Addr -", connection.id)
+				log.Infof("[CONNECTION CLOSED] Address : %s", connection.id)
 			}
 		case message := <-manager.broadcast:
-
 			messageParts := strings.Split(string(message), "$$$")
 			messageClientID := messageParts[0]
 			for connection := range manager.clients {
@@ -56,11 +56,11 @@ func (manager *ClientManager) receive(client *Client) {
 			client.socket.Close()
 			break
 		}
+
 		if length > 0 {
 			messageParts := strings.Split(string(message), "$$$")
 			clientID := messageParts[0]
-			actualMessage := messageParts[1]
-			fmt.Println("CLIENT:", clientID, "RECEIVED: "+string(actualMessage))
+			log.Infof("Message from : %s", clientID)
 			manager.broadcast <- message
 		}
 	}
@@ -79,22 +79,23 @@ func (manager *ClientManager) send(client *Client) {
 	}
 }
 
-// StartServerMode method is used for starting the server.
-func StartServerMode() {
-
+// StartServer method is used for starting the server.
+func StartServer() {
 	port, ok := os.LookupEnv("PORT")
 	if !ok {
 		port = "12345"
 	}
+
 	hosts, ok := os.LookupEnv("HOSTS")
 	if !ok {
 		hosts = "localhost"
 	}
 
-	fmt.Println("Starting server... Accepting connections on -", hosts+":"+port)
+	log.Info("Starting server...")
+	log.Infof("Accepting connections on %s:%s", hosts, port)
 	listener, error := net.Listen("tcp", hosts+":"+port)
 	if error != nil {
-		fmt.Println(error)
+		log.Error(error)
 	}
 
 	manager := ClientManager{
@@ -108,8 +109,9 @@ func StartServerMode() {
 	for {
 		connection, _ := listener.Accept()
 		if error != nil {
-			fmt.Println(error)
+			log.Error(error)
 		}
+
 		client := &Client{id: connection.RemoteAddr().String(), socket: connection, data: make(chan []byte)}
 		manager.register <- client
 		go manager.receive(client)
