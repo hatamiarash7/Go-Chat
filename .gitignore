@@ -20,3 +20,6 @@ vendor/
 
 # Environments
 .env
+
+# Keys
+*.asc
