@@ -1,8 +1,10 @@
 package main
 
 import (
-	"flag"
+	"os"
 	"strings"
+
+	log "github.com/sirupsen/logrus"
 
 	"github.com/joho/godotenv"
 )
@@ -10,12 +12,16 @@ import (
 func main() {
 	godotenv.Load()
 
-	flagMode := flag.String("mode", "server", "start in client or server mode")
-	flag.Parse()
+	mode, ok := os.LookupEnv("START_MODE")
 
-	if strings.ToLower(*flagMode) == "server" {
-		StartServerMode()
+	if !ok {
+		log.Fatal("START_MODE is not set")
+		os.Exit(0)
+	}
+
+	if strings.ToLower(mode) == "server" {
+		StartServer()
 	} else {
-		StartClientMode()
+		StartClient()
 	}
 }
