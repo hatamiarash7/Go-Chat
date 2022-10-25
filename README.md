@@ -43,7 +43,7 @@ PASSPHRASE=
 
 To separate the server from the client, you can use the `START_MODE` variable. This can be set to either `server` or `client`. If it is set to `server`, the server will start. If it is set to `client`, the client will start.
 
-**Note:** You should escape any special characters for the `PASSPHRASE`.
+**Note**: You should escape any special characters for the `PASSPHRASE`.
 
 ## Usage
 
@@ -65,11 +65,23 @@ Configure your `.env` file and then run the following command:
 START_MODE=client ./go-chat-linux-amd64
 ```
 
-**Note:** For MacOS, you should allow the application to run. You can do this by going to `System Preferences > Security & Privacy > General` and then click `Open Anyway`.
+**Note**: For MacOS, you should allow the application to run. You can do this by going to `System Preferences > Security & Privacy > General` and then click `Open Anyway`.
 
 ### Docker
 
-Coming soon
+I think we don't need a Docker image for the **Client**. But if you want to run the **Server** in a Docker container, you can use the published image.
+
+```bash
+docker run -it hatamiarash7/go-chat-server
+```
+
+Use `PORT` and `HOST` environment variables to configure the server.
+
+```bash
+docker run -it -e PORT=1234 -e HOST=0.0.0.0 hatamiarash7/go-chat-server
+```
+
+**Note**: Default `PORT` is `12345` and default `HOST` is `0.0.0.0`.
 
 ### Build from source
 
