@@ -43,7 +43,23 @@ To separate the server from the client, you can use the `START_MODE` variable. T
 
 ### Binaries
 
-Coming soon
+Download the latest release from the [releases page](https://github.com/hatamiarash7/Go-Chat/releases/latest) based on your operating system and architecture.
+
+**Server:**
+
+```bash
+START_MODE=server ./go-chat-linux-amd64
+```
+
+**Client:**
+
+Configure your `.env` file and then run the following command:
+
+```bash
+START_MODE=client ./go-chat-linux-amd64
+```
+
+**Note:** For MacOS, you should allow the application to run. You can do this by going to `System Preferences > Security & Privacy > General` and then click `Open Anyway`.
 
 ### Docker
 
