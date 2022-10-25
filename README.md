@@ -1,5 +1,11 @@
 # Go Chat
 
+[![Release version][badge_release_version]][link_releases]
+![Project language][badge_language]
+[![Release][release_badge]][release_link]
+[![License][badge_license]][link_license]
+[![Image size][badge_size_latest]][link_docker_hub]
+
 It's a simple chat system using a **PUB/SUB** single channel and **GPG encryption**. Any message sent from a client ( publisher ) is routed to each other client ( subscriber ) on demand.
 
 All messages are encrypted using GPG and the public key of the recipient. The encrypted message is then sent to the server and routed to the recipient. The recipient then decrypts the message using their private key.
@@ -110,3 +116,13 @@ Don't be shy and reach out to us if you want to contribute 😉
 ## Issues
 
 Each project may have many problems. Contributing to the better development of this project by reporting them. 👍
+
+[release_badge]: https://github.com/hatamiarash7/Go-Chat/actions/workflows/release.yaml/badge.svg
+[release_link]: https://github.com/hatamiarash7/Go-Chat/actions/workflows/release.yaml
+[link_license]: https://github.com/hatamiarash7/go-chat/blob/master/LICENSE
+[badge_license]: https://img.shields.io/github/license/hatamiarash7/go-chat.svg?longCache=true
+[badge_size_latest]: https://img.shields.io/docker/image-size/hatamiarash7/go-chat-server/latest?maxAge=30
+[link_docker_hub]: https://hub.docker.com/r/hatamiarash7/go-chat-server/
+[badge_release_version]: https://img.shields.io/github/release/hatamiarash7/go-chat.svg?maxAge=30&label=Release
+[link_releases]: https://github.com/hatamiarash7/go-chat/releases
+[badge_language]: https://img.shields.io/github/go-mod/go-version/hatamiarash7/go-chat?longCache=true
