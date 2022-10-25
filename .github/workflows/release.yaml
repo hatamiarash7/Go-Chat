@@ -100,5 +100,5 @@ jobs:
           tags: |
             hatamiarash7/go-chat-server:${{ steps.slug.outputs.version }}
             hatamiarash7/go-chat-server:latest
-            ghcr.io/${{ github.actor }}/${{ github.event.repository.name }}:${{ steps.slug.outputs.version }}
-            ghcr.io/${{ github.actor }}/${{ github.event.repository.name }}:latest
+            ghcr.io/${{ github.actor }}/go-chat-server:${{ steps.slug.outputs.version }}
+            ghcr.io/${{ github.actor }}/go-chat-server:latest
