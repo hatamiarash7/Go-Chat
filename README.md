@@ -8,6 +8,19 @@
 
 It's a simple chat system using a **PUB/SUB** single channel and **GPG encryption**. Any message sent from a client ( publisher ) is routed to each other client ( subscriber ) on demand.
 
+- [Go Chat](#go-chat)
+  - [How-to](#how-to)
+  - [Configure](#configure)
+  - [Usage](#usage)
+    - [Binaries](#binaries)
+    - [Docker](#docker)
+    - [Build from source](#build-from-source)
+  - [Support 💛](#support-)
+  - [Contributing 🤝](#contributing-)
+  - [Issues](#issues)
+
+## How-to
+
 All messages are encrypted using GPG and the public key of the recipient. The encrypted message is then sent to the server and routed to the recipient. The recipient then decrypts the message using their private key.
 
 ```text
@@ -81,7 +94,7 @@ Use `PORT` and `HOST` environment variables to configure the server.
 docker run -it -e PORT=1234 -e HOST=0.0.0.0 hatamiarash7/go-chat-server
 ```
 
-> **Note**: Default `PORT` is `12345` and default `HOST` is `0.0.0.0`.
+> **Note**: Default `PORT` is `12345` and default `HOST` is `0.0.0.0` for Docker.
 
 ### Build from source
 
