@@ -1,3 +1,5 @@
+##################################### Build #####################################
+
 FROM --platform=$BUILDPLATFORM golang:1.19-alpine as builder
 
 ARG APP_VERSION="undefined@docker"
@@ -15,7 +17,17 @@ ENV GOARCH $TARGETARCH
 
 RUN set -x \
     && go version \
-    && CGO_ENABLED=0 go build -trimpath -ldflags "$LDFLAGS" -o /src/go-chat .
+    && CGO_ENABLED=0 go build -trimpath -ldflags "$LDFLAGS" -o /src/go-chat-uncompress .
+
+##################################### Compression #####################################
+
+FROM hatamiarash7/upx:latest as upx
+
+COPY --from=builder /src /
+
+RUN upx --best --lzma -o /go-chat /go-chat-uncompress
+
+######################################## Final ########################################
 
 FROM scratch
 
@@ -32,7 +44,7 @@ LABEL \
     org.opencontainers.image.created="$DATE_CREATED" \
     org.opencontainers.image.licenses="MIT"
 
-COPY --from=builder /src /
+COPY --from=upx /go-chat /go-chat
 
 ENV START_MODE server
 ENV HOST 0.0.0.0

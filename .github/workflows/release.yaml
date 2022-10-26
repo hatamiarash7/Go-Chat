@@ -54,6 +54,14 @@ jobs:
           LDFLAGS: -s -w -X github.com/hatamiarash7/go-chat/internal/pkg/version.version=${{ steps.slug.outputs.version }}
         run: go build -trimpath -ldflags "$LDFLAGS" -o "./${{ steps.values.outputs.binary-name }}" .
 
+      - name: Run UPX
+        uses: crazy-max/ghaction-upx@v2
+        with:
+          version: latest
+          files: |
+            ./${{ steps.values.outputs.binary-name }}
+          args: --best --lzma
+
       - name: Upload binaries to release
         uses: svenstaro/upload-release-action@v2
         with:
