@@ -72,7 +72,7 @@ jobs:
           tag: ${{ github.ref }}
 
   docker:
-    name: 🐳 Build docker image
+    name: 🐳 Build Docker image
     runs-on: ubuntu-20.04
     needs: init
     steps:
