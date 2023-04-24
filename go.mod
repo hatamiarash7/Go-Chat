@@ -5,7 +5,7 @@ go 1.19
 require github.com/joho/godotenv v1.5.1
 
 require (
-	github.com/ProtonMail/gopenpgp/v2 v2.7.0
+	github.com/ProtonMail/gopenpgp/v2 v2.7.1
 	github.com/sirupsen/logrus v1.9.0
 )
 

@@ -6,6 +6,8 @@ github.com/ProtonMail/gopenpgp/v2 v2.6.1 h1:/10PjfK/3JrJl3mXfV27US8sAYd3CX3wl9Gk
 github.com/ProtonMail/gopenpgp/v2 v2.6.1/go.mod h1:/BU5gfAVwqyd8EfC3Eu7zmuhwYQpKs+cGD8M//iiaxs=
 github.com/ProtonMail/gopenpgp/v2 v2.7.0 h1:TUH6csU8OpRtA5EKU8yoAXn8M5Inh2T4Y086lKFFyS8=
 github.com/ProtonMail/gopenpgp/v2 v2.7.0/go.mod h1:/BU5gfAVwqyd8EfC3Eu7zmuhwYQpKs+cGD8M//iiaxs=
+github.com/ProtonMail/gopenpgp/v2 v2.7.1 h1:Awsg7MPc2gD3I7IFac2qE3Gdls0lZW8SzrFZ3k1oz0s=
+github.com/ProtonMail/gopenpgp/v2 v2.7.1/go.mod h1:/BU5gfAVwqyd8EfC3Eu7zmuhwYQpKs+cGD8M//iiaxs=
 github.com/bwesterb/go-ristretto v1.2.0/go.mod h1:fUIoIZaG73pV5biE2Blr2xEzDoMj7NFEuV9ekS419A0=
 github.com/cloudflare/circl v1.1.0 h1:bZgT/A+cikZnKIwn7xL2OBj012Bmvho/o6RpRvv3GKY=
 github.com/cloudflare/circl v1.1.0/go.mod h1:prBCrKB9DV4poKZY1l9zBXg2QJY7mvgRvtMxxK7fi4I=
