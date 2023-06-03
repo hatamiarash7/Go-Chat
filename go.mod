@@ -6,7 +6,7 @@ require github.com/joho/godotenv v1.5.1
 
 require (
 	github.com/ProtonMail/gopenpgp/v2 v2.7.1
-	github.com/sirupsen/logrus v1.9.2
+	github.com/sirupsen/logrus v1.9.3
 )
 
 require (
