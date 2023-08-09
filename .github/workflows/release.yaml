@@ -16,7 +16,7 @@ jobs:
 
   build:
     name: ⚙️ Build ${{ matrix.os }} - ${{ matrix.arch }}
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     needs: init
     strategy:
       fail-fast: false
@@ -73,7 +73,7 @@ jobs:
 
   docker:
     name: 🐳 Build Docker image
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     needs: init
     steps:
       - name: Checkout
