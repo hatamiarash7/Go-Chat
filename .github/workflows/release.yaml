@@ -56,7 +56,7 @@ jobs:
         run: go build -trimpath -ldflags "$LDFLAGS" -o "./${{ steps.values.outputs.binary-name }}" .
 
       - name: Run UPX
-        uses: crazy-max/ghaction-upx@v2
+        uses: crazy-max/ghaction-upx@v3
         with:
           version: latest
           files: |
