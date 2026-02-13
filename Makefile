@@ -4,7 +4,7 @@ clean: ## Remove old binaries
 	rm -rf ./go-chat
 
 build: clean ## Build project
-	GOOS=darwin GOARCH=arm64 CGO_ENABLED=0 go build -ldflags="-s -w"
+	CGO_ENABLED=0 go build -ldflags="-s -w"
 
 server: ## Run the server
 	START_MODE=server ./go-chat --mode server
