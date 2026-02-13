@@ -4,6 +4,7 @@ go 1.26.0
 
 require (
 	github.com/ProtonMail/gopenpgp/v2 v2.9.0
+	github.com/ProtonMail/gopenpgp/v3 v3.3.0
 	github.com/joho/godotenv v1.5.1
 	github.com/sirupsen/logrus v1.9.4
 	golang.org/x/crypto v0.48.0
