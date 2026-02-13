@@ -88,7 +88,8 @@ PASSPHRASE=your-secure-passphrase
 | `PRIVATE_KEY_FILE` | Path to PGP private key                 | —           | PGP mode only              |
 | `PASSPHRASE`       | PGP key passphrase or AES shared secret | —           | Client mode                |
 
-> **Note**: Escape any special characters in `PASSPHRASE` when using shell commands.
+> [!NOTE]
+> Escape any special characters in `PASSPHRASE` when using shell commands.
 
 ## Key Generation
 
