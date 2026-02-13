@@ -1,10 +1,10 @@
 # Binaries
 go-chat
+!go-chat/
 *.exe
 
 # Git
-.git
-.gitignore
+.git*
 
 # IDE
 .idea/

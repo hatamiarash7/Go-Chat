@@ -1,5 +1,6 @@
 # Binaries
 go-chat
+!go-chat/
 *.exe
 *.exe~
 *.dll
