@@ -1,0 +1,43 @@
+# Binaries
+go-chat
+*.exe
+
+# Git
+.git
+.gitignore
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment & Keys
+.env
+.env.example
+keys/
+*.asc
+*.gpg
+*.pem
+
+# Documentation
+README.md
+LICENSE
+docs/
+
+# Test & Coverage
+*_test.go
+coverage.out
+coverage.html
+
+# Build artifacts
+__debug_bin*
+
+# Docker
+Dockerfile
+.dockerignore
+docker-compose*.yml
