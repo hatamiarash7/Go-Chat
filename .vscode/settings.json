@@ -1,3 +1,16 @@
 {
-  "cSpell.words": ["godotenv", "joho"]
+  "cSpell.words": [
+    "ciphertext",
+    "ciphertexts",
+    "Encryptor",
+    "godotenv",
+    "gopenpgp",
+    "joho",
+    "lzma",
+    "mysecretpassphrase",
+    "sarif",
+    "trimpath",
+    "unregistration",
+    "Warnf"
+  ]
 }
