@@ -3,7 +3,7 @@ module github.com/hatamiarash7/go-chat
 go 1.26.0
 
 require (
-	github.com/ProtonMail/gopenpgp/v2 v2.11.0
+	github.com/ProtonMail/gopenpgp/v2 v2.11.1
 	github.com/joho/godotenv v1.5.1
 	github.com/sirupsen/logrus v1.10.2
 	golang.org/x/crypto v0.57.0
